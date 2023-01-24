@@ -41,10 +41,12 @@ if (day > 20 && day <= 31) {
 
 }
 
-let userNum = Number(prompt("Введите положительное число")); ///163/10=3 163-3=160 
+let userNum = Number(prompt("Введите положительное число")); ////967 -96-
 let a = userNum % 10;
-let b = ((userNum - a) % 100) / 10;
-let c = ((userNum - a - b * 10) % 1000) / 100;
+userNum = (userNum - a) / 10;
+let b = userNum % 10;
+userNum = (userNum - b) / 10;
+let c = userNum % 10;
 console.log(`${a} количество единиц`);
 console.log(`${b} количество десятков`);
 console.log(`${c} количество сотен`);
