@@ -73,7 +73,7 @@ function split(a, b) {
     if (b !== 0) {
         return console.log(`Частное равно ${a/b}`);;
     } else {
-        console.log('Второе число ранво 0, на ноль делить нельзя');
+        console.log('Второе число равно 0, на ноль делить нельзя');
     }
 }
 console.log(`Сумма равна ${sum(numb1,numb2)}`);
