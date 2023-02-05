@@ -5,33 +5,33 @@
 2– четное число
 3– нечетное число…
 10– четное число */
-/* for (let i = 0; i < 12; i++) {
+for (let i = 0; i < 12; i++) {
     if (i == 0) {
         console.log(`${i} - это ноль`)
-    }
-    if (i % 2 == 0) {
+    } else if (i % 2 == 0) {
         console.log(`${i} - четное число`)
     } else {
         console.log(`${i} - нечетное число`)
     }
-} */
+}
 
 
 /* Задание 2
 Дан массив[1, 2, 3, 4, 5, 6, 7]
 Сделайте из этого массива следующий[1, 2, 3, 6, 7] */
-/* const array = [1, 2, 3, 4, 5, 6, 7];
-const array1 = array.slice(0, 3);
-array1.push(6, 7);
-console.log(array1); */
+const arr1 = [1, 2, 3, 4, 5, 6, 7];
+const arr2 = arr1.slice(0, 3);
+arr2.push(6, 7);
+console.log(arr2);
 
 /* Задание 3
 Используя Math.random() вам необходимо генерировать цифры от 0 до 9, и создать массив состоящий из 5 таких элементов
 1. Рассчитать сумму элементов этого массива
 2. Найти минимальное число
 3. Найти есть ли в этом массиве число 3 */
-/* let sum = 0;
+let sum = 0;
 let min = 0;
+const array = [];
 for (let index = 0; index < 6; index++) {
     array[index] = Math.floor(Math.random() * 10);
     console.log(array[index]);
@@ -40,15 +40,16 @@ for (let index = 0; index < 6; index++) {
     if (min > array[index]) {
         min = array[index];
     }
-
-} */
-/* console.log(`Сумма элементов массива равна ${sum}`);
+}
+console.log(`Сумма элементов массива равна ${sum}`);
 console.log(`Минимальное число массива равно ${min}`);
+
 for (let index = 0; index < 6; index++) {
     if (array[index] === 3) {
         console.log(`${index+1} элемент массива равен 3`);
     }
-} */
+}
+
 
 /* *
 Необязательное задание.*
@@ -61,9 +62,8 @@ xxx
 xxxx
 xxxxx */
 const arrayX = [];
-for (let index = 0; index < 21; index++) {
-    arrayX[0] = ''
-    arrayX[index] += 'x';
+for (let index = 1; index < 21; index++) {
+    arrayX[0] = '';
+    arrayX[index] = arrayX[index - 1] + 'x';
     console.log(arrayX[index]);
-
 }
