@@ -77,8 +77,9 @@
         const elTextArea = document.querySelector('textarea');
         const mouseEventListenerOver = () => {
             console.log('Вы навели на textarea.');
-            elTextArea.addEventListener('mouseover', mouseEventListenerOver);
+
         };
+        elTextArea.addEventListener('mouseover', mouseEventListenerOver);
         /*   5. Необходимо повесить событие клика на тег ul.В обработчике события в консоль необходимо выводить текст, который записан внутри элемента кнопки, по которой был произведен клик.Если клик был не по кнопке, то ничего выводить не нужно.Необходимо использовать делегирование. */
         const ElUl = document.querySelector('ul');
         const listenerUl = (e) => {
