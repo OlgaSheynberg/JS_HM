@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content"></div>
+    <script src="dataHM.js"></script>
+    <script>
+        const data = JSON.parse(dataInfo);
+        console.log(data);
+
+
+        data.forEach(function(data) {
+            const ElContent = document.querySelector('.content');
+            const userInfo = document.createElement('div');
+            userInfo.classList.add('userInfo');
+            ElContent.appendChild(userInfo);
+
+
+            const userPhoto = document.createElement('img');
+            userPhoto.classList.add('userPhoto');
+            userPhoto.setAttribute('alt', 'user photo')
+            userPhoto.src = data.results[0].picture.large;
+            userInfo.appendChild(userPhoto);
+
+            const userName = document.createElement('p');
+            userName.classList.add('UserName');
+            userName.textContent = data.results[0].name.title + ' ' + data.results[0].name.first + ' ' + data.results[0].name.last;
+            userInfo.appendChild(userName);
+
+            const gender = document.createElement('p');
+            gender.classList.add('gender');
+            gender.textContent = data.results[0].gender;
+            userInfo.appendChild(gender);
+
+            const country = document.createElement('p');
+            country.classList.add('country');
+            country.textContent = 'City: ' + data.results[0].location.city + ' Country: ' +
+                data.results[0].location.country;
+            userInfo.appendChild(country);
+
+            const UserPnone = document.createElement('p');
+            UserPnone.classList.add('UserPnone');
+            UserPnone.textContent = 'Phone: ' + data.results[0].phone;
+            userInfo.appendChild(UserPnone);
+        })
+    </script>
+    <style>
+        .content {
+            display: flex;
+            gap: 32px;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+        
+        .userInfo {
+            width: 360px;
+            height: 300px;
+            border: 1px solid rgb(116, 116, 225);
+            padding: 10px;
+            background-color: rgb(205, 209, 239);
+        }
+        
+        .img {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .UserName {
+            color: rgb(19, 19, 36);
+        }
+        
+        .gender {
+            color: rgb(72, 72, 86);
+        }
+        
+        .country {
+            color: rgb(54, 5, 107)
+        }
+    </style>
+</body>
+
+</html>
