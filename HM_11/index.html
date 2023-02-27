@@ -294,6 +294,7 @@
     <script>
         const data = JSON.parse(dataProducts);
 
+
         data.forEach(function(data) {
 
             const ElFeturedImg = document.querySelector('.fetured_img');
@@ -317,12 +318,12 @@
             BtnBack.textContent = 'Add to Cart';
             DivBtnBack.appendChild(BtnBack);
 
-            const ImgProduct = document.createElement('img');
+            /*  const ImgProduct = document.createElement('img');
             ImgProduct.classList.add('img_product');
             ImgProduct.setAttribute('alt', 'product photo')
             ImgProduct.src = data.photo;
             DivBlockI1.appendChild(ImgProduct);
-
+ */
 
             const DivFuturedInfo = document.createElement('div');
             DivFuturedInfo.classList.add('fetured_info');

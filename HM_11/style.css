@@ -303,7 +303,7 @@ header {
 }
 
 .blockI1 {
-    position: relative;
+    /* position: relative; */
     /*     background-image: url(./img/Futered_1.svg); */
 }
 
@@ -335,7 +335,7 @@ header {
     background: rgba(58, 56, 56, 0.86);
     opacity: 0;
     position: relative;
-    position: absolute;
+    /* position: absolute; */
 }
 
 .btn_back {
