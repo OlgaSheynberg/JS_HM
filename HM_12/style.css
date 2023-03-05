@@ -26,13 +26,14 @@
     }
     
     .control {
-        width: 400px;
+        width: 90%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         border: 3px solid rgb(225, 116, 207);
         border-radius: 8px;
         margin-bottom: 8px;
+        gap: 6px;
     }
     
     .player:hover .control {
@@ -44,7 +45,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        width: 90%;
+    }
+    
+    .timingRange {
+        width: 90%;
     }
     
     input {
@@ -52,7 +57,7 @@
     }
     
     img {
-        width: 60px;
+        width: 40px;
     }
     
     .volumeRange {
