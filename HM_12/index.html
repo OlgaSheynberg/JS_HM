@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="player">
+            <video><source src="frontoviki.mp4" controls>
+            </video>
+        </div>
+        <div class="range">
+            <div>Текущее время:
+                <span class="timing">0</span> </div>
+            <input type="range" class="timingRange" value="0" step="0.01">
+        </div>
+        <div class="control">
+            <img class="play" src="./img/play.png">
+            <img class="pause" src="./img/pause.png">
+            <img class="forwardback" src="./img/forwardback.png">
+            <img class="forward" src="./img/forward.png">
+            <img class="stop" src="./img/stop.png">
+            <input type="range" class="volumeRange" value="1" min="0" max="1" step="0.01">
+        </div>
+    </div>
+    <script src="data.js"></script>
+
+    <script>
+        const video = document.querySelector('video');
+        const timing = document.querySelector('.timing');
+        const buffered = video.buffered;
+        const playVideo = document.querySelector('.play');
+        const pauseVideo = document.querySelector('.pause');
+        const stopVideo = document.querySelector('.stop');
+        const forwardVideo = document.querySelector('.forward');
+        const forwarBackdVideo = document.querySelector('.forwardback');
+        const timingRange = document.querySelector('.timingRange');
+        const volumeRange = document.querySelector('.volumeRange');
+
+
+
+        playVideo.onclick = () => {
+            video.play();
+        }
+        pauseVideo.onclick = () => {
+            video.pause();
+        }
+        stopVideo.onclick = () => {
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        forwardVideo.onclick = () => {
+            video.currentTime += 1.10;
+        }
+
+        forwarBackdVideo.onclick = () => {
+            video.currentTime -= 1.10;
+        }
+        volumeRange.addEventListener('input', () => {
+            video.volume = volumeRange.value;
+        });
+
+        timingRange.addEventListener('input', () => {
+            video.currentTime = timingRange.value / 100 * video.duration;
+        });
+        video.addEventListener('timeupdate', event => {
+            timing.innerText = video.currentTime.toFixed(1);
+            timingRange.value = video.currentTime / video.duration * 100;
+        });
+    </script>
+</body>
+
+</html>
